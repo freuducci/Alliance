@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alliance Centre Universitaire et Technique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap');
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Inter',sans-serif;
+            background:#0f0f0f;
+            color:#ffffff;
+            overflow-x:hidden;
+        }
+        .slide-up{opacity:0;transform:translateY(30px);animation:slideUp .8s forwards;}
+        @keyframes slideUp{to{opacity:1;transform:translateY(0);}}
+        .glow{box-shadow:0 0 20px rgba(255,110,0,.5);}
+    </style>
+</head>
+<body class="bg-white">
+    <nav class="fixed top-0 w-full z-50 bg-[#1f3333]/90 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <span class="text-3xl font-extrabold text-white tracking-tight">Alliance <span class="text-[#ff6e00]">CU</span></span>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">À propos</a>
+                <a href="#programmes" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Programmes</a>
+                <a href="#admission" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Admission</a>
+                <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Contact</a>
+                <a href="#programmes" class="text-sm font-bold bg-[#ff6e00] text-black px-6 py-3 rounded-full hover:bg-[#ff7a1a] transition glow">
+                    Commencer
+                </a>
+            </div>
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center pt-20 relative overflow-hidden bg-[#1f3333]">
+        <!-- Background decorative shapes -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-[#ff6e00]/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#1d2f30]/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-10 right-1/4 w-20 h-20 bg-[#ff6e00]/20 rounded-full blur-xl"></div>
+        <div class="absolute bottom-1/3 left-1/4 w-32 h-32 bg-[#1d2f30]/20 rounded-full blur-2xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="slide-up">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter">
+                    Bâtis ton <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6e00] to-[#00b5e4]">avenir</span>, ici et maintenant.
+                </h1>
+                <p class="mt-6 text-xl text-gray-300 max-w-lg">
+                    Alliance CU offre une formation technique, universitaire et professionnelle pensée pour les jeunes haïtiens prêts à transformer leur réalité.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                    <a href="#programmes" class="bg-[#ff6e00] text-black px-8 py-4 rounded-full font-bold hover:bg-[#ff7a1a] transition glow">
+                        Voir nos programmes
+                    </a>
+                    <a href="#contact" class="border border-gray-500 text-white px-8 py-4 rounded-full font-bold hover:bg-gray-100 hover:text-black transition">
+                        Prendre rendez-vous
+                    </a>
+                </div>
+            </div>
+            <div class="relative slide-up w-full h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl glow" style="animation-delay:.2s">
+                <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out">
+                    <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80" alt="Étudiants haïtiens" class="w-full h-full object-cover">
+                </div>
+                <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?auto=format&fit=crop&w=1200&q=80" alt="Salle de classe moderne" class="w-full h-full object-cover">
+                </div>
+                <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80" alt="Cérémonie de remise des diplômes" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nos-partenaires" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1d2f30] mb-12">
+                Nos <span class="text-[#ff6e00]">partenaires</span>
+            </h2>
+            <div class="relative overflow-hidden">
+                <div class="flex space-x-12 animate-marquee">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Microsoft" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ibm/ibm-original.svg" alt="IBM" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="GitHub" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/meta/meta-original.svg" alt="Meta" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg" alt="Spotify" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netflix/netflix-original.svg" alt="Netflix" class="h-12 md:h-16 object-contain">
+                    <!-- Duplicate for seamless scroll -->
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Microsoft" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ibm/ibm-original.svg" alt="IBM" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="GitHub" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/meta/meta-original.svg" alt="Meta" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg" alt="Spotify" class="h-12 md:h-16 object-contain">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netflix/netflix-original.svg" alt="Netflix" class="h-12 md:h-16 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+    <section id="about" class="py-32 md:py-48 relative bg-[#fafafa] overflow-hidden">
+        <!-- Floating particles -->
+        <div class="absolute top-1/5 left-10 w-4 h-4 bg-[#ff6e00]/60 rounded-full animate-ping"></div>
+        <div class="absolute top-1/3 right-20 w-3 h-3 bg-[#1d2f30]/60 rounded-full animate-ping delay-500"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-[#ff6e00]/60 rounded-full animate-ping delay-1000"></div>
+        <div class="absolute top-1/2 left-1/4 w-5 h-5 bg-[#1d2f30]/60 rounded-full animate-ping delay-700"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-[#ff6e00]/60 rounded-full animate-ping delay-300"></div>
+
+        <!-- Glowing orbs -->
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-[#ff6e00]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-[#1d2f30]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text -->
+                <div class="slide-up">
+                    <p class="text-sm font-bold text-[#ff6e00] tracking-widest uppercase">À propos de nous</p>
+                    <h2 class="text-5xl md:text-7xl font-extrabold text-[#1d2f30] leading-tight mt-4">
+                        Bâtis ton <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#1d2f30] to-[#00b5e4]">avenir</span>,<br> avec nous.
+                    </h2>
+                    <p class="mt-6 text-xl text-black leading-relaxed max-w-xl">
+                        Fondée en 2001, Alliance forme chaque année des milliers d’étudiants à travers 9 villes d’Haïti. 
+                        Notre mission : une éducation accessible, moderne et tournée vers l’emploi.
+                    </p>
+                    <div class="mt-10">
+                        <a href="#programmes"
+                           class="inline-flex items-center bg-[#ff6e00] text-black px-7 py-3 rounded-full font-bold hover:bg-[#ff7a1a] transition-all shadow-[0_0_20px_rgba(255,110,0,.4)] hover:shadow-[0_0_35px_rgba(255,110,0,.6)]">
+                            Voir plus
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats card -->
+                <div class="slide-up" style="animation-delay:.2s">
+                    <div class="relative bg-[#1d2f30] backdrop-blur-xl border border-white/10 rounded-3xl p-10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=60"
+                             alt="Étudiants Alliance"
+                             class="w-full h-64 object-cover rounded-2xl mb-8">
+                        <div class="grid grid-cols-2 text-center gap-8">
+                            <div>
+                                <div class="text-6xl font-black text-[#ff6e00]">9</div>
+                                <div class="text-sm text-gray-300 mt-2">Villes en Haïti</div>
+                            </div>
+                            <div>
+                                <div class="text-6xl font-black text-[#00b5e4]">23</div>
+                                <div class="text-sm text-gray-300 mt-2">Années d’expertise</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button class="w-full bg-gradient-to-r from-[#ff6e00] to-[#ff8a00] text-black font-bold py-3 rounded-full hover:shadow-[0_0_25px_rgba(255,110,0,.6)] transition">
+                                Rejoindre Alliance CU
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi choisir Alliance ? -->
+    <section id="why-choose" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#1d2f30]">
+                    Pourquoi choisir <span class="text-[#ff6e00]">Alliance</span> ?
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Découvrez ce qui fait d’Alliance le choix de milliers d’étudiants haïtiens.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: big image -->
+                <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                         alt="Étudiants Alliance" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Right: vertical timeline -->
+                <div class="space-y-8 relative">
+                    <!-- timeline line -->
+                    <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-[#ff6e00] to-[#00b5e4]"></div>
+
+                    <!-- Item 1 -->
+                    <div class="relative pl-10">
+                        <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">1</span>
+                        <h3 class="text-xl font-bold text-[#1d2f30] mb-1">+24 ans d’expérience</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Des milliers d’étudiants formés et insérés, adaptés aux réalités haïtiennes.</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative pl-10">
+                        <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">2</span>
+                        <h3 class="text-xl font-bold text-[#1d2f30] mb-1">9 succursales</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Nous sommes là où vous êtes : partout en Haïti, accessible à chacun.</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative pl-10">
+                        <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">3</span>
+                        <h3 class="text-xl font-bold text-[#1d2f30] mb-1">Staff 80 % alumni</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Enseignants qui vous comprennent car ils ont été à votre place.</p>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="relative pl-10">
+                        <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">4</span>
+                        <h3 class="text-xl font-bold text-[#1d2f30] mb-1">Diplômes reconnus</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Formations certifiées et reconnues sur le marché national et international.</p>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="relative pl-10">
+                        <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">5</span>
+                        <h3 class="text-xl font-bold text-[#1d2f30] mb-1">Stages & insertion</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Projets réels, stages garantis et accompagnement vers l’emploi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        // Hero slideshow
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        function nextSlide() {
+            slides[currentSlide].style.opacity = '0';
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.opacity = '1';
+        }
+        // Initialize first slide
+        slides[0].style.opacity = '1';
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
