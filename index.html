@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alliance Centre Universitaire et Technique</title>
+    <title>Alliance CU – Bâtis ton avenir, ici et maintenant</title>
+    <meta name="description" content="Alliance Centre Universitaire et Technique – 24 ans d'expertise, 9 succursales, formations techniques et universitaires en Haïti.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -37,47 +38,6 @@
         .program-card {
             transition: all 0.3s ease;
         }
-        /* Dark mode toggle switch */
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        input:checked + .slider {
-            background-color: #ff6e00;
-        }
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-        /* Scroll progress bar */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -87,15 +47,8 @@
             transition: width 0.1s ease;
             z-index: 1000;
         }
-        /* Enhanced hover effects */
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255,110,0,0.3);
-        }
-        /* Animated background gradient */
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255,110,0,0.3); }
         .gradient-bg {
             background: linear-gradient(-45deg, #1f3333, #2d4f50, #ff6e00, #00b5e4);
             background-size: 400% 400%;
@@ -106,47 +59,63 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        /* Floating animation */
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
+        .float { animation: float 6s ease-in-out infinite; }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
-        /* Pulse animation for CTA */
-        .pulse-cta {
-            animation: pulse-cta 2s infinite;
-        }
+        .pulse-cta { animation: pulse-cta 2s infinite; }
         @keyframes pulse-cta {
             0% { box-shadow: 0 0 0 0 rgba(255,110,0,0.7); }
             70% { box-shadow: 0 0 0 10px rgba(255,110,0,0); }
             100% { box-shadow: 0 0 0 0 rgba(255,110,0,0); }
         }
+        /* Back-to-top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #ff6e00;
+            color: #000;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* Animated counter */
+        .counter {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ff6e00;
+        }
     </style>
 </head>
 <body class="bg-white">
     <div class="progress-bar" id="progress-bar"></div>
-    
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-[#1f3333]/90 backdrop-blur-xl border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
             <span class="text-3xl font-extrabold text-white tracking-tight">Alliance <span class="text-[#ff6e00]">CU</span></span>
             <div class="hidden md:flex items-center space-x-8">
+                <a href="#hero" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Accueil</a>
                 <a href="#about" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">À propos</a>
-                <a href="#programmes" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Programmes</a>
-                <a href="#admission" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Admission</a>
+                <a href="#programmes" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Nos Formations</a>
+                <a href="#succursales" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Nos Succursales</a>
+                <a href="#evenements" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Event</a>
                 <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Contact</a>
                 <a href="#programmes" class="text-sm font-bold bg-[#ff6e00] text-black px-6 py-3 rounded-full hover:bg-[#ff7a1a] transition glow pulse-cta">
                     Commencer
                 </a>
             </div>
             <div class="flex items-center space-x-4">
-                <!-- Dark mode toggle -->
-                <label class="toggle-switch">
-                    <input type="checkbox" id="dark-mode-toggle">
-                    <span class="slider"></span>
-                </label>
                 <button class="md:hidden text-white text-2xl" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -155,9 +124,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#1f3333] border-t border-white/10">
             <div class="px-4 py-4 space-y-4">
+                <a href="#hero" class="block text-gray-300 hover:text-[#ff6e00] transition">Accueil</a>
                 <a href="#about" class="block text-gray-300 hover:text-[#ff6e00] transition">À propos</a>
-                <a href="#programmes" class="block text-gray-300 hover:text-[#ff6e00] transition">Programmes</a>
-                <a href="#admission" class="block text-gray-300 hover:text-[#ff6e00] transition">Admission</a>
+                <a href="#programmes" class="block text-gray-300 hover:text-[#ff6e00] transition">Nos Formations</a>
+                <a href="#succursales" class="block text-gray-300 hover:text-[#ff6e00] transition">Nos Succursales</a>
+                <a href="#evenements" class="block text-gray-300 hover:text-[#ff6e00] transition">Event</a>
                 <a href="#contact" class="block text-gray-300 hover:text-[#ff6e00] transition">Contact</a>
             </div>
         </div>
@@ -165,12 +136,11 @@
 
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center pt-20 relative overflow-hidden bg-[#1f3333] gradient-bg">
-        <!-- Background decorative shapes -->
         <div class="absolute top-1/4 left-10 w-96 h-96 bg-[#ff6e00]/10 rounded-full blur-3xl float"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#1d2f30]/10 rounded-full blur-3xl float" style="animation-delay: 2s;"></div>
         <div class="absolute top-10 right-1/4 w-20 h-20 bg-[#ff6e00]/20 rounded-full blur-xl float" style="animation-delay: 1s;"></div>
         <div class="absolute bottom-1/3 left-1/4 w-32 h-32 bg-[#1d2f30]/20 rounded-full blur-2xl float" style="animation-delay: 3s;"></div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center relative z-10">
             <div class="slide-up">
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter">
@@ -203,23 +173,16 @@
     </section>
 
     <!-- About Section -->
-
-    <!-- About Section -->
     <section id="about" class="py-32 md:py-48 relative bg-[#fafafa] overflow-hidden">
-        <!-- Floating particles -->
         <div class="absolute top-1/5 left-10 w-4 h-4 bg-[#ff6e00]/60 rounded-full animate-ping"></div>
         <div class="absolute top-1/3 right-20 w-3 h-3 bg-[#1d2f30]/60 rounded-full animate-ping delay-500"></div>
         <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-[#ff6e00]/60 rounded-full animate-ping delay-1000"></div>
         <div class="absolute top-1/2 left-1/4 w-5 h-5 bg-[#1d2f30]/60 rounded-full animate-ping delay-700"></div>
         <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-[#ff6e00]/60 rounded-full animate-ping delay-300"></div>
-        
-        <!-- Glowing orbs -->
         <div class="absolute -top-20 -left-20 w-96 h-96 bg-[#ff6e00]/10 rounded-full blur-3xl animate-pulse"></div>
         <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-[#1d2f30]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Text -->
                 <div class="slide-up">
                     <p class="text-sm font-bold text-[#ff6e00] tracking-widest uppercase">À propos de nous</p>
                     <h2 class="text-5xl md:text-7xl font-extrabold text-[#1d2f30] leading-tight mt-4">
@@ -237,8 +200,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Stats card -->
                 <div class="slide-up" style="animation-delay:.2s">
                     <div class="relative bg-[#1d2f30] backdrop-blur-xl border border-white/10 rounded-3xl p-10 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=60"
@@ -246,11 +207,11 @@
                              class="w-full h-64 object-cover rounded-2xl mb-8">
                         <div class="grid grid-cols-2 text-center gap-8">
                             <div>
-                                <div class="text-6xl font-black text-[#ff6e00]">9</div>
+                                <div class="counter" data-target="9">0</div>
                                 <div class="text-sm text-gray-300 mt-2">Villes en Haïti</div>
                             </div>
                             <div>
-                                <div class="text-6xl font-black text-[#00b5e4]">23</div>
+                                <div class="counter" data-target="23">0</div>
                                 <div class="text-sm text-gray-300 mt-2">Années d'expertise</div>
                             </div>
                         </div>
@@ -276,48 +237,33 @@
                     Découvrez ce qui fait d'Alliance le choix de milliers d'étudiants haïtiens.
                 </p>
             </div>
-
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left: big image -->
                 <div class="relative rounded-2xl overflow-hidden shadow-xl">
                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
                          alt="Étudiants Alliance" class="w-full h-full object-cover">
                 </div>
-
-                <!-- Right: vertical timeline -->
                 <div class="space-y-8 relative">
-                    <!-- timeline line -->
                     <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-[#ff6e00] to-[#00b5e4]"></div>
-
-                    <!-- Item 1 -->
                     <div class="relative pl-10">
                         <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">1</span>
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-1">+24 ans d'expérience</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Des milliers d'étudiants formés et insérés, adaptés aux réalités haïtiennes.</p>
                     </div>
-
-                    <!-- Item 2 -->
                     <div class="relative pl-10">
                         <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">2</span>
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-1">9 succursales</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Nous sommes là où vous êtes : partout en Haïti, accessible à chacun.</p>
                     </div>
-
-                    <!-- Item 3 -->
                     <div class="relative pl-10">
                         <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">3</span>
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-1">Staff 80 % alumni</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Enseignants qui vous comprennent car ils ont été à votre place.</p>
                     </div>
-
-                    <!-- Item 4 -->
                     <div class="relative pl-10">
                         <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">4</span>
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-1">Diplômes reconnus</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Formations certifiées et reconnues sur le marché national et international.</p>
                     </div>
-
-                    <!-- Item 5 -->
                     <div class="relative pl-10">
                         <span class="absolute left-0 top-1 w-9 h-9 rounded-full bg-[#ff6e00] flex items-center justify-center text-white font-bold">5</span>
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-1">Stages & insertion</h3>
@@ -328,7 +274,7 @@
         </div>
     </section>
 
-    <!-- Programmes Section with Categories -->
+    <!-- Programmes Section -->
     <section id="programmes" class="py-20 md:py-28 bg-[#1f3333]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -349,7 +295,6 @@
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Informatique & Technologie</h3>
                         <p class="text-gray-600 text-sm">Maîtrisez les technologies de demain</p>
                     </div>
-                    <!-- Overlay -->
                     <div class="absolute inset-0 bg-[#1d2f30]/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6">
                         <h4 class="text-white text-xl font-bold mb-4">Informatique & Technologie</h4>
                         <ul class="text-gray-300 text-sm space-y-2 mb-6">
@@ -357,7 +302,7 @@
                             <li>• Cybersécurité</li>
                             <li>• Intelligence Artificielle</li>
                         </ul>
-                        <a href="#" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
+                        <a href="#contact" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
                             Voir les cours
                         </a>
                     </div>
@@ -366,34 +311,11 @@
                 <!-- Catégorie 2 -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
                     <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
-                         alt="Sciences & Administration" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Sciences & Administration</h3>
-                        <p class="text-gray-600 text-sm">Administrez avec excellence</p>
-                    </div>
-                    <!-- Overlay -->
-                    <div class="absolute inset-0 bg-[#1d2f30]/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6">
-                        <h4 class="text-white text-xl font-bold mb-4">Sciences & Administration</h4>
-                        <ul class="text-gray-300 text-sm space-y-2 mb-6">
-                            <li>• Administration Publique</li>
-                            <li>• Gestion des Ressources Humaines</li>
-                            <li>• Sciences Politiques</li>
-                        </ul>
-                        <a href="#" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
-                            Voir les cours
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Catégorie 3 -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
                          alt="Business & Comptabilité" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Business & Comptabilité</h3>
                         <p class="text-gray-600 text-sm">Réussissez dans le monde des affaires</p>
                     </div>
-                    <!-- Overlay -->
                     <div class="absolute inset-0 bg-[#1d2f30]/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6">
                         <h4 class="text-white text-xl font-bold mb-4">Business & Comptabilité</h4>
                         <ul class="text-gray-300 text-sm space-y-2 mb-6">
@@ -401,13 +323,13 @@
                             <li>• Marketing Digital</li>
                             <li>• Entrepreneuriat</li>
                         </ul>
-                        <a href="#" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
+                        <a href="#contact" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
                             Voir les cours
                         </a>
                     </div>
                 </div>
 
-                <!-- Catégorie 4 -->
+                <!-- Catégorie 3 -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
                     <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
                          alt="Communication & Langues" class="w-full h-48 object-cover">
@@ -415,7 +337,6 @@
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Communication & Langues</h3>
                         <p class="text-gray-600 text-sm">Communiquez sans frontières</p>
                     </div>
-                    <!-- Overlay -->
                     <div class="absolute inset-0 bg-[#1d2f30]/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6">
                         <h4 class="text-white text-xl font-bold mb-4">Communication & Langues</h4>
                         <ul class="text-gray-300 text-sm space-y-2 mb-6">
@@ -423,13 +344,13 @@
                             <li>• Espagnol des Affaires</li>
                             <li>• Communication Interculturelle</li>
                         </ul>
-                        <a href="#" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
+                        <a href="#contact" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
                             Voir les cours
                         </a>
                     </div>
                 </div>
 
-                <!-- Catégorie 5 -->
+                <!-- Catégorie 4 -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
                     <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
                          alt="Métiers Pratiques" class="w-full h-48 object-cover">
@@ -437,7 +358,6 @@
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Métiers Pratiques</h3>
                         <p class="text-gray-600 text-sm">Apprenez un métier d'avenir</p>
                     </div>
-                    <!-- Overlay -->
                     <div class="absolute inset-0 bg-[#1d2f30]/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6">
                         <h4 class="text-white text-xl font-bold mb-4">Métiers Pratiques</h4>
                         <ul class="text-gray-300 text-sm space-y-2 mb-6">
@@ -445,7 +365,28 @@
                             <li>• Mécanique Automobile</li>
                             <li>• Construction & Travaux Publics</li>
                         </ul>
-                        <a href="#" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
+                        <a href="#contact" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
+                            Voir les cours
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Catégorie 5 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-white hover-lift">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+                         alt="Sciences & Administration" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Sciences & Administration</h3>
+                        <p class="text-gray-600 text-sm">Administrez avec excellence</p>
+                    </div>
+                    <div class="absolute inset-0 bg-[#1d2f30]/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6">
+                        <h4 class="text-white text-xl font-bold mb-4">Sciences & Administration</h4>
+                        <ul class="text-gray-300 text-sm space-y-2 mb-6">
+                            <li>• Administration Publique</li>
+                            <li>• Gestion des Ressources Humaines</li>
+                            <li>• Sciences Politiques</li>
+                        </ul>
+                        <a href="#contact" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
                             Voir les cours
                         </a>
                     </div>
@@ -459,7 +400,6 @@
                         <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Leadership & Développement</h3>
                         <p class="text-gray-600 text-sm">Développez votre plein potentiel</p>
                     </div>
-                    <!-- Overlay -->
                     <div class="absolute inset-0 bg-[#1d2f30]/95 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6">
                         <h4 class="text-white text-xl font-bold mb-4">Leadership & Développement</h4>
                         <ul class="text-gray-300 text-sm space-y-2 mb-6">
@@ -467,7 +407,7 @@
                             <li>• Coaching & Mentorat</li>
                             <li>• Intelligence Émotionnelle</li>
                         </ul>
-                        <a href="#" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
+                        <a href="#contact" class="bg-[#ff6e00] text-black px-6 py-2 rounded-full font-bold hover:bg-[#ff7a1a] transition">
                             Voir les cours
                         </a>
                     </div>
@@ -487,9 +427,7 @@
                     Les 3 formations les plus demandées par nos étudiants
                 </p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Formation 1 -->
                 <div class="program-card bg-white rounded-2xl shadow-xl border border-gray-100 hover-lift">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
                          alt="Informatique Bureautique"
@@ -503,8 +441,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Formation 2 -->
                 <div class="program-card bg-white rounded-2xl shadow-xl border border-gray-100 hover-lift">
                     <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
                          alt="Comptabilité Informatisée"
@@ -518,8 +454,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Formation 3 -->
                 <div class="program-card bg-white rounded-2xl shadow-xl border border-gray-100 hover-lift">
                     <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
                          alt="Anglais"
@@ -548,9 +482,7 @@
                     Retrouvez-nous dans 9 villes d'Haïti
                 </p>
             </div>
-
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Delmas -->
                 <div class="bg-white rounded-2xl shadow-lg p-6 hover-lift">
                     <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Delmas</h3>
                     <p class="text-gray-600 text-sm mb-3">32 Rue X, Delmas 33</p>
@@ -560,8 +492,6 @@
                         Contacter cette succursale
                     </a>
                 </div>
-
-                <!-- Pétion-Ville -->
                 <div class="bg-white rounded-2xl shadow-lg p-6 hover-lift">
                     <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Pétion-Ville</h3>
                     <p class="text-gray-600 text-sm mb-3">Rue Lamarre, Pétion-Ville</p>
@@ -571,8 +501,6 @@
                         Contacter cette succursale
                     </a>
                 </div>
-
-                <!-- Cap-Haïtien -->
                 <div class="bg-white rounded-2xl shadow-lg p-6 hover-lift">
                     <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Cap-Haïtien</h3>
                     <p class="text-gray-600 text-sm mb-3">Rue 15, Cap-Haïtien</p>
@@ -582,8 +510,6 @@
                         Contacter cette succursale
                     </a>
                 </div>
-
-                <!-- Saint-Marc -->
                 <div class="bg-white rounded-2xl shadow-lg p-6 hover-lift">
                     <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Saint-Marc</h3>
                     <p class="text-gray-600 text-sm mb-3">Rue 5, Saint-Marc</p>
@@ -593,8 +519,6 @@
                         Contacter cette succursale
                     </a>
                 </div>
-
-                <!-- Gonaïves -->
                 <div class="bg-white rounded-2xl shadow-lg p-6 hover-lift">
                     <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Gonaïves</h3>
                     <p class="text-gray-600 text-sm mb-3">Avenue des Quatre Chemins, Gonaïves</p>
@@ -604,8 +528,6 @@
                         Contacter cette succursale
                     </a>
                 </div>
-
-                <!-- Carrefour -->
                 <div class="bg-white rounded-2xl shadow-lg p-6 hover-lift">
                     <h3 class="text-xl font-bold text-[#1d2f30] mb-2">Carrefour</h3>
                     <p class="text-gray-600 text-sm mb-3">Route de Carrefour, Carrefour</p>
@@ -616,7 +538,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="text-center mt-12">
                 <a href="#contact"
                    class="inline-flex items-center bg-[#1d2f30] text-white px-8 py-3 rounded-full font-bold hover:bg-[#2d4f50] transition">
@@ -627,7 +548,7 @@
         </div>
     </section>
 
-    <!-- Événements, Partenaires & Bourses Section -->
+    <!-- Événements, Partenaires & Bourses -->
     <section id="evenements" class="py-20 md:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -640,7 +561,6 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-12">
-                <!-- Photos d'événements -->
                 <div class="lg:col-span-2">
                     <h3 class="text-2xl font-bold text-[#1d2f30] mb-6">Photos d'événements</h3>
                     <div class="grid md:grid-cols-2 gap-6">
@@ -666,16 +586,6 @@
                         </div>
                         <div class="group relative rounded-2xl overflow-hidden shadow-lg hover-lift">
                             <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80"
-                                 alt="Séminaire technique" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                                <div class="p-4 text-white">
-                                    <h4 class="font-bold">Séminaire Tech 2024</h4>
-                                    <p class="text-sm">12 Septembre 2024 - Cap-Haïtien</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover-lift">
-                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
                                  alt="Atelier entrepreneuriat" class="w-full h-64 object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                                 <div class="p-4 text-white">
@@ -684,12 +594,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover-lift">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+                                 alt="Séminaire technique" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-4 text-white">
+                                    <h4 class="font-bold">Séminaire Tech 2024</h4>
+                                    <p class="text-sm">12 Septembre 2024 - Cap-Haïtien</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Partenaires & Bourses -->
                 <div>
-                    <!-- Logos Partenaires -->
                     <div class="mb-8">
                         <h3 class="text-2xl font-bold text-[#1d2f30] mb-4">Nos partenaires</h3>
                         <div class="grid grid-cols-2 gap-4">
@@ -708,7 +626,6 @@
                         </div>
                     </div>
 
-                    <!-- Bourses disponibles -->
                     <div>
                         <h3 class="text-2xl font-bold text-[#1d2f30] mb-4">Bourses disponibles</h3>
                         <div class="space-y-4">
@@ -750,7 +667,6 @@
             </div>
 
             <div class="space-y-4">
-                <!-- Question 1 -->
                 <details class="group bg-white rounded-2xl shadow-lg p-6">
                     <summary class="flex justify-between items-center font-bold text-[#1d2f30] cursor-pointer">
                         <span>Où sont vos campus ?</span>
@@ -761,7 +677,6 @@
                     </p>
                 </details>
 
-                <!-- Question 2 -->
                 <details class="group bg-white rounded-2xl shadow-lg p-6">
                     <summary class="flex justify-between items-center font-bold text-[#1d2f30] cursor-pointer">
                         <span>Quelle est la durée moyenne des formations ?</span>
@@ -772,7 +687,6 @@
                     </p>
                 </details>
 
-                <!-- Question 3 -->
                 <details class="group bg-white rounded-2xl shadow-lg p-6">
                     <summary class="flex justify-between items-center font-bold text-[#1d2f30] cursor-pointer">
                         <span>Faut-il un diplôme pour s'inscrire ?</span>
@@ -783,7 +697,6 @@
                     </p>
                 </details>
 
-                <!-- Question 4 -->
                 <details class="group bg-white rounded-2xl shadow-lg p-6">
                     <summary class="flex justify-between items-center font-bold text-[#1d2f30] cursor-pointer">
                         <span>Peut-on payer en plusieurs fois ?</span>
@@ -794,7 +707,6 @@
                     </p>
                 </details>
 
-                <!-- Question 5 -->
                 <details class="group bg-white rounded-2xl shadow-lg p-6">
                     <summary class="flex justify-between items-center font-bold text-[#1d2f30] cursor-pointer">
                         <span>Vos diplômes sont-ils reconnus ?</span>
@@ -805,7 +717,6 @@
                     </p>
                 </details>
 
-                <!-- Question 6 -->
                 <details class="group bg-white rounded-2xl shadow-lg p-6">
                     <summary class="flex justify-between items-center font-bold text-[#1d2f30] cursor-pointer">
                         <span>Comment vous contacter ?</span>
@@ -823,7 +734,6 @@
                     Témoignages
                 </h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Témoignage 1 -->
                     <div class="bg-white rounded-2xl shadow-lg p-6">
                         <div class="flex items-center mb-4">
                             <img src="https://images.unsplash.com/photo-1494790108755-2616b332-3fc6f4a7-6b7f-4b4e-9a7b-5f7a2e8e6b7a?auto=format&fit=crop&w=100&q=60"
@@ -838,7 +748,6 @@
                         </p>
                     </div>
 
-                    <!-- Témoignage 2 -->
                     <div class="bg-white rounded-2xl shadow-lg p-6">
                         <div class="flex items-center mb-4">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=60"
@@ -853,7 +762,6 @@
                         </p>
                     </div>
 
-                    <!-- Témoignage 3 -->
                     <div class="bg-white rounded-2xl shadow-lg p-6">
                         <div class="flex items-center mb-4">
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=60"
@@ -874,13 +782,10 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 md:py-32 bg-gradient-to-br from-[#1f3333] to-[#2d4f50] relative overflow-hidden">
-        <!-- Decorative blurred shapes -->
         <div class="absolute -top-20 -left-20 w-72 h-72 bg-[#ff6e00]/20 rounded-full blur-3xl animate-pulse"></div>
         <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-[#00b5e4]/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
-                <!-- Left: Contact Info Card -->
                 <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-10 shadow-2xl text-white">
                     <h2 class="text-4xl lg:text-5xl font-extrabold mb-4">
                         Contactez-<span class="text-[#ff6e00]">nous</span>
@@ -890,7 +795,6 @@
                     </p>
 
                     <div class="space-y-7">
-                        <!-- Adresse -->
                         <div class="flex items-start">
                             <i class="fas fa-map-marker-alt text-[#ff6e00] text-xl mt-1 mr-5"></i>
                             <div>
@@ -898,8 +802,6 @@
                                 <p class="text-gray-300 text-sm">32 Rue X, Delmas 33<br>Port-au-Prince, Haïti</p>
                             </div>
                         </div>
-
-                        <!-- Téléphone -->
                         <div class="flex items-start">
                             <i class="fas fa-phone-alt text-[#ff6e00] text-xl mt-1 mr-5"></i>
                             <div>
@@ -907,8 +809,6 @@
                                 <a href="tel:+50937010000" class="text-gray-300 text-sm hover:text-[#ff6e00] transition">+509 3701-0000</a>
                             </div>
                         </div>
-
-                        <!-- Email -->
                         <div class="flex items-start">
                             <i class="fas fa-envelope text-[#ff6e00] text-xl mt-1 mr-5"></i>
                             <div>
@@ -916,8 +816,6 @@
                                 <a href="mailto:info@alliancecu.ht" class="text-gray-300 text-sm hover:text-[#ff6e00] transition">info@alliancecu.ht</a>
                             </div>
                         </div>
-
-                        <!-- Horaires -->
                         <div class="flex items-start">
                             <i class="fas fa-clock text-[#ff6e00] text-xl mt-1 mr-5"></i>
                             <div>
@@ -927,7 +825,6 @@
                         </div>
                     </div>
 
-                    <!-- Réseaux sociaux -->
                     <div class="mt-10 flex space-x-4">
                         <a href="#" class="w-10 h-10 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
                             <i class="fab fa-facebook-f"></i>
@@ -941,7 +838,6 @@
                     </div>
                 </div>
 
-                <!-- Right: Floating Form -->
                 <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-10">
                     <h3 class="text-2xl font-extrabold text-[#1d2f30] mb-6">Envoyez-nous un message</h3>
                     <form id="contact-form" class="space-y-5">
@@ -951,13 +847,10 @@
                             <input type="text" name="lastName" placeholder="Nom" required
                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent">
                         </div>
-
                         <input type="email" name="email" placeholder="Email" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent">
-
                         <input type="tel" name="phone" placeholder="Téléphone"
                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent">
-
                         <select name="program" required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent text-gray-700">
                             <option value="" disabled selected>Programme d'intérêt</option>
@@ -968,10 +861,8 @@
                             <option value="design">Design & Création</option>
                             <option value="langues">Langues & Communication</option>
                         </select>
-
                         <textarea name="message" rows="4" placeholder="Votre message" required
                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent"></textarea>
-
                         <button type="submit"
                                 class="w-full bg-[#ff6e00] text-black px-6 py-3 rounded-xl font-bold hover:bg-[#ff7a1a] transition shadow-[0_0_15px_rgba(255,110,0,.5)] hover:shadow-[0_0_25px_rgba(255,110,0,.7)]">
                             Envoyer le message
@@ -986,7 +877,6 @@
     <footer class="bg-gradient-to-br from-[#1f3333] to-[#000] text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
-                <!-- Brand -->
                 <div class="lg:col-span-2">
                     <h3 class="text-3xl font-extrabold mb-3">
                         Alliance <span class="text-[#ff6e00]">CU</span>
@@ -1010,7 +900,6 @@
                     </div>
                 </div>
 
-                <!-- Programmes -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Programmes</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
@@ -1022,7 +911,6 @@
                     </ul>
                 </div>
 
-                <!-- Ressources -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Ressources</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
@@ -1034,7 +922,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact rapide -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
@@ -1046,13 +933,18 @@
             </div>
 
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-                <p>&copy; 2024 Alliance CU. Tous droits réservés.</p>
+                <p>&copy; 2025 Alliance CU. Tous droits réservés.</p>
                 <p class="mt-2 md:mt-0">
-                    Conçu avec <span class="text-[#ff6e00]">❤</span> en Haïti
+                    Développé par <a href="https://solvexalabs.com" target="_blank" class="text-[#ff6e00] hover:underline">SolvexaLabs</a>
                 </p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Hero slideshow
@@ -1063,7 +955,6 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].style.opacity = '1';
         }
-        // Initialize first slide
         slides[0].style.opacity = '1';
         setInterval(nextSlide, 5000);
 
@@ -1079,10 +970,7 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
@@ -1099,7 +987,6 @@
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1108,7 +995,6 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.slide-up').forEach(el => {
             observer.observe(el);
         });
@@ -1122,7 +1008,14 @@
             scrollProgress.style.width = scrollPercentage + '%';
         });
 
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById
+        // Animated counters
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const updateCounter = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / 100;
+                if (count < target) {
+                    counter.innerText = Math
 </body>
 </html>
