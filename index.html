@@ -70,7 +70,6 @@
             70% { box-shadow: 0 0 0 10px rgba(255,110,0,0); }
             100% { box-shadow: 0 0 0 0 rgba(255,110,0,0); }
         }
-
         /* Back-to-top button */
         #back-to-top {
             position: fixed;
@@ -90,14 +89,12 @@
             opacity: 1;
             visibility: visible;
         }
-
         /* Animated counter */
         .counter {
             font-size: 4rem;
             font-weight: 900;
             color: #ff6e00;
         }
-
         /* Marquee text */
         .marquee-container {
             overflow: hidden;
@@ -107,7 +104,6 @@
             font-weight: 700;
             padding: 8px 0;
         }
-
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -149,9 +145,9 @@
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#hero" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Accueil</a>
                 <a href="#about" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">À propos</a>
-                <a href="#programmes" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Nos Formations</a>
-                <a href="#succursales" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Nos Succursales</a>
-                <a href="#evenements" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Event</a>
+                <a href="#programmes" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Nos ressources</a>
+                <a href="#succursales" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Nos réseaux</a>
+                <a href="#evenements" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Événements</a>
                 <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-[#ff6e00] transition">Contact</a>
                 <a href="#programmes" class="text-sm font-bold bg-[#ff6e00] text-black px-6 py-3 rounded-full hover:bg-[#ff7a1a] transition glow pulse-cta">
                     Commencer
@@ -168,9 +164,9 @@
             <div class="px-4 py-4 space-y-4">
                 <a href="#hero" class="block text-gray-300 hover:text-[#ff6e00] transition">Accueil</a>
                 <a href="#about" class="block text-gray-300 hover:text-[#ff6e00] transition">À propos</a>
-                <a href="#programmes" class="block text-gray-300 hover:text-[#ff6e00] transition">Nos Formations</a>
-                <a href="#succursales" class="block text-gray-300 hover:text-[#ff6e00] transition">Nos Succursales</a>
-                <a href="#evenements" class="block text-gray-300 hover:text-[#ff6e00] transition">Event</a>
+                <a href="#programmes" class="block text-gray-300 hover:text-[#ff6e00] transition">Nos ressources</a>
+                <a href="#succursales" class="block text-gray-300 hover:text-[#ff6e00] transition">Nos réseaux</a>
+                <a href="#evenements" class="block text-gray-300 hover:text-[#ff6e00] transition">Événements</a>
                 <a href="#contact" class="block text-gray-300 hover:text-[#ff6e00] transition">Contact</a>
             </div>
         </div>
@@ -203,11 +199,10 @@
                     Alliance CU – 24 ans d’expertise
                 </p>
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
-                    <span class="block">Transforme</span>
-                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-[#ff6e00] to-[#00b5e4]">
-                        ton destin
-                    </span>
-                    <span class="block">avec Alliance</span>
+                    <span class="block">Votre avenir professionnel</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-[#ff6e00] to-[#00b5e4]">commence ici!</span>
+                    <span class="block"></span>
+                     
                 </h1>
                 <p class="mt-6 max-w-lg mx-auto lg:mx-0 text-base text-gray-300 leading-relaxed">
                     Alliance CU offre des formations techniques, universitaires et professionnelles pensées pour les jeunes haïtiens prêts à transformer leur réalité et construire un avenir solide.
@@ -325,7 +320,7 @@
                             <div>
                                 <h3 class="text-2xl font-bold mb-2 text-white">Notre Mission</h3>
                                 <p class="text-gray-300 leading-relaxed text-sm">
-                                    Développer des compétences pratiques et théoriques, favoriser l’innovation et garantir l’insertion professionnelle de chaque étudiant.
+                                    Développer des compétences pratiques et théoriques, favoriser l'innovation et garantir l'insertion professionnelle de chaque étudiant.
                                 </p>
                             </div>
                         </div>
@@ -567,7 +562,90 @@
         </div>
     </section>
 
-    <!-- Formations populaires -->
+    <!-- Formations de courte durée -->
+    <section id="formations-courtes" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#1d2f30]">
+                    Formations <span class="text-[#ff6e00]">de courte durée</span>
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Boostez vos compétences en quelques semaines ou mois avec nos formations express
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Formation 1 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                         alt="Pack Office" class="w-full h-40 object-cover rounded-t-2xl">
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-[#1d2f30]">Pack Office</h3>
+                        <p class="text-sm text-gray-600 mb-3">Word, Excel, PowerPoint</p>
+                        <p class="text-xs text-gray-500 mb-4">Durée : 2 mois</p>
+                        <a href="#contact"
+                           class="inline-block bg-[#ff6e00] text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-[#ff7a1a] transition">
+                            S'inscrire
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 2 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+                         alt="QuickBooks" class="w-full h-40 object-cover rounded-t-2xl">
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-[#1d2f30]">QuickBooks</h3>
+                        <p class="text-sm text-gray-600 mb-3">Comptabilité simplifiée</p>
+                        <p class="text-xs text-gray-500 mb-4">Durée : 6 semaines</p>
+                        <a href="#contact"
+                           class="inline-block bg-[#ff6e00] text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-[#ff7a1a] transition">
+                            S'inscrire
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 3 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
+                         alt="Design Graphique" class="w-full h-40 object-cover rounded-t-2xl">
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-[#1d2f30]">Design Graphique</h3>
+                        <p class="text-sm text-gray-600 mb-3">Photoshop, Illustrator</p>
+                        <p class="text-xs text-gray-500 mb-4">Durée : 3 mois</p>
+                        <a href="#contact"
+                           class="inline-block bg-[#ff6e00] text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-[#ff7a1a] transition">
+                            S'inscrire
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formation 4 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 hover-lift">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
+                         alt="Marketing Digital" class="w-full h-40 object-cover rounded-t-2xl">
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-[#1d2f30]">Marketing Digital</h3>
+                        <p class="text-sm text-gray-600 mb-3">Réseaux sociaux, SEO</p>
+                        <p class="text-xs text-gray-500 mb-4">Durée : 8 semaines</p>
+                        <a href="#contact"
+                           class="inline-block bg-[#ff6e00] text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-[#ff7a1a] transition">
+                            S'inscrire
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact"
+                   class="inline-flex items-center bg-[#ff6e00] text-black px-8 py-3 rounded-full font-bold hover:bg-[#ff7a1a] transition">
+                    Voir toutes les formations courtes
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+ <!-- Formations populaires -->
     <section id="formations-populaires" class="py-20 md:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -622,12 +700,12 @@
         </div>
     </section>
 
-    <!-- Nos succursales -->
+    <!-- Nos réseaux -->
     <section id="succursales" class="py-20 md:py-32 bg-[#1d2f30]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-6xl font-extrabold text-white">
-                    Nos <span class="text-[#ff6e00]">succursales</span>
+                    Nos <span class="text-[#ff6e00]">réseaux</span>
                 </h2>
                 <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
                     Retrouvez-nous dans 9 villes d'Haïti
@@ -723,13 +801,14 @@
             <div class="text-center mt-12">
                 <a href="#contact"
                    class="inline-flex items-center bg-[#ff6e00] text-black px-8 py-3 rounded-full font-bold hover:bg-[#ff7a1a] transition">
-                    Voir toutes nos succursales
+                    Voir tous nos réseaux
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
         </div>
     </section>
 
+   
     <!-- Événements, Partenaires & Bourses -->
     <section id="evenements" class="py-20 md:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -976,45 +1055,45 @@
                         Prêt à transformer votre avenir ? Remplissez le formulaire ou utilisez l’un des moyens ci-dessous.
                     </p>
 
-                    <div class="space-y-7">
+                    <div class="space-y-6">
                         <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-[#ff6e00] text-xl mt-1 mr-5"></i>
+                            <i class="fas fa-phone-alt text-[#ff6e00] text-xl mt-1 mr-4"></i>
                             <div>
-                                <h3 class="font-semibold text-white text-lg">Adresse</h3>
-                                <p class="text-gray-300 text-sm">32 Rue X, Delmas 33<br>Port-au-Prince, Haïti</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone-alt text-[#ff6e00] text-xl mt-1 mr-5"></i>
-                            <div>
-                                <h3 class="font-semibold text-white text-lg">Téléphone</h3>
+                                <h3 class="font-semibold text-white text-lg">Appelez-nous</h3>
                                 <a href="tel:+50937010000" class="text-gray-300 text-sm hover:text-[#ff6e00] transition">+509 3701-0000</a>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-envelope text-[#ff6e00] text-xl mt-1 mr-5"></i>
+                            <i class="fas fa-envelope text-[#ff6e00] text-xl mt-1 mr-4"></i>
                             <div>
-                                <h3 class="font-semibold text-white text-lg">Email</h3>
+                                <h3 class="font-semibold text-white text-lg">Écrivez-nous</h3>
                                 <a href="mailto:info@alliancecu.ht" class="text-gray-300 text-sm hover:text-[#ff6e00] transition">info@alliancecu.ht</a>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-clock text-[#ff6e00] text-xl mt-1 mr-5"></i>
+                            <i class="fas fa-map-marker-alt text-[#ff6e00] text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-white text-lg">Visitez-nous</h3>
+                                <p class="text-gray-300 text-sm">Delmas 33, Port-au-Prince</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-[#ff6e00] text-xl mt-1 mr-4"></i>
                             <div>
                                 <h3 class="font-semibold text-white text-lg">Horaires</h3>
-                                <p class="text-gray-300 text-sm">Lun – Ven : 8h00 – 17h00<br>Sam : 8h00 – 12h00</p>
+                                <p class="text-gray-300 text-sm">L-V: 8h-17h, Sam: 8h-12h</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-10 flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
+                    <div class="mt-8 flex space-x-3">
+                        <a href="#" class="w-9 h-9 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
+                        <a href="#" class="w-9 h-9 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
+                        <a href="#" class="w-9 h-9 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -1022,31 +1101,31 @@
 
                 <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-10">
                     <h3 class="text-2xl font-extrabold text-[#1d2f30] mb-6">Envoyez-nous un message</h3>
-                    <form id="contact-form" class="space-y-5">
+                    <form id="contact-form" class="space-y-4">
                         <div class="grid sm:grid-cols-2 gap-4">
                             <input type="text" name="firstName" placeholder="Prénom" required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent">
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] outline-none">
                             <input type="text" name="lastName" placeholder="Nom" required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent">
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] outline-none">
                         </div>
                         <input type="email" name="email" placeholder="Email" required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent">
-                        <input type="tel" name="phone" placeholder="Téléphone"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent">
+                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] outline-none">
+                        <input type="tel" name="phone" placeholder="Téléphone" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] outline-none">
                         <select name="program" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent text-gray-700">
-                            <option value="" disabled selected>Programme d'intérêt</option>
-                            <option value="informatique">Informatique</option>
-                            <option value="business">Business & Management</option>
-                            <option value="sante">Santé</option>
-                            <option value="genie">Génie Civil</option>
-                            <option value="design">Design & Création</option>
-                            <option value="langues">Langues & Communication</option>
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] outline-none bg-white">
+                            <option value="" disabled selected>Choisir une formation</option>
+                            <option>Informatique & Technologie</option>
+                            <option>Business & Comptabilité</option>
+                            <option>Communication & Langues</option>
+                            <option>Métiers Pratiques</option>
+                            <option>Sciences & Administration</option>
+                            <option>Leadership & Développement</option>
                         </select>
-                        <textarea name="message" rows="4" placeholder="Votre message" required
-                                  class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] focus:border-transparent"></textarea>
+                        <textarea name="message" placeholder="Message" rows="4" required
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ff6e00] outline-none resize-none"></textarea>
                         <button type="submit"
-                                class="w-full bg-[#ff6e00] text-black px-6 py-3 rounded-xl font-bold hover:bg-[#ff7a1a] transition shadow-[0_0_15px_rgba(255,110,0,.5)] hover:shadow-[0_0_25px_rgba(255,110,0,.7)]">
+                                class="w-full bg-[#ff6e00] text-black font-bold py-3 rounded-xl hover:bg-[#ff7a1a] transition">
                             Envoyer le message
                         </button>
                     </form>
@@ -1056,44 +1135,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-[#1f3333] to-[#000] text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
-                <div class="lg:col-span-2">
-                    <h3 class="text-3xl font-extrabold mb-3">
-                        Alliance <span class="text-[#ff6e00]">CU</span>
-                    </h3>
-                    <p class="text-gray-300 text-sm leading-relaxed max-w-xs">
-                        Bâtis ton avenir, ici et maintenant. 24 ans d’expertise au service de l’éducation haïtienne.
-                    </p>
-                    <div class="flex space-x-4 mt-6">
-                        <a href="#" class="w-9 h-9 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 bg-[#ff6e00]/20 border border-[#ff6e00]/40 rounded-full flex items-center justify-center text-[#ff6e00] hover:bg-[#ff6e00] hover:text-black transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Programmes</h4>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li><a href="#" class="hover:text-[#ff6e00] transition">Informatique & Tech</a></li>
-                        <li><a href="#" class="hover:text-[#ff6e00] transition">Business & Comptabilité</a></li>
-                        <li><a href="#" class="hover:text-[#ff6e00] transition">Sciences & Administration</a></li>
-                        <li><a href="#" class="hover:text-[#ff6e00] transition">Métiers Pratiques</a></li>
-                        <li><a href="#" class="hover:text-[#ff6e00] transition">Langues & Communication</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-sem
+    <footer class="bg-[#0f0f0f] border-t border-white/10 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm">
+                Développé par <a href="https://solvexa.com" target="_blank" class="text-[#ff6e00] hover:text-[#ff7a1a] transition">Solvexa Labs LLC</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
